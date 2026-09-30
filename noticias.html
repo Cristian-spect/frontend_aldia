@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noticias – Al Día</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-brand">Al Día</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="noticias.html" class="activo">Noticias</a>
+      <a href="favoritos.html">Favoritos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="nosotros.html">Nosotros</a>
+    </nav>
+  </header>
+
+  <!-- ── LISTADO HEADER ── -->
+  <section class="listado-header">
+    <h1>Todas las Noticias</h1>
+    <!-- Filtros por categoría -->
+    <div class="filtros">
+      <button class="filtro activo" data-cat="todas">Todas</button>
+      <button class="filtro" data-cat="educacion">Educación</button>
+      <button class="filtro" data-cat="tecnologia">Tecnología</button>
+      <button class="filtro" data-cat="turismo">Turismo</button>
+      <button class="filtro" data-cat="comercial">Comercial</button>
+    </div>
+    <!-- Buscador en tiempo real -->
+    <input type="search" id="buscador" placeholder="Buscar noticias...">
+  </section>
+
+  <!-- ── GRID DINÁMICO ── -->
+  <section>
+    <div id="grid-noticias" class="cards-grid"></div>
+    <p id="sin-resultados" class="msg-vacio hidden">No se encontraron noticias con ese criterio.</p>
+  </section>
+
+  <footer class="footer">
+    <div><strong>Al Día</strong><p>Noticias claras, todos los días.</p></div>
+    <div>
+      <strong>Enlaces</strong>
+      <a href="index.html">Inicio</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="favoritos.html">Favoritos</a>
+    </div>
+    <div><strong>Síguenos</strong><p>Instagram · X · YouTube</p></div>
+  </footer>
+  <div class="footer-copy">© 2026 Al Día. Todos los derechos reservados.</div>
+
+  <script src="js/data.js"></script>
+  <script src="js/noticias.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto – Al Día</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-brand">Al Día</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="favoritos.html">Favoritos</a>
+      <a href="contacto.html" class="activo">Contacto</a>
+      <a href="nosotros.html">Nosotros</a>
+    </nav>
+  </header>
+
+  <section class="contacto">
+    <h1>Escríbenos</h1>
+
+    <!-- novalidate: manejamos validaciones desde JS -->
+    <form id="form-contacto" novalidate>
+
+      <label>Nombre completo
+        <input type="text" id="nombre" placeholder="Ej. Laura Gómez">
+        <span class="error" id="err-nombre"></span>
+      </label>
+
+      <label>Correo electrónico
+        <input type="email" id="correo" placeholder="tu@correo.com">
+        <span class="error" id="err-correo"></span>
+      </label>
+
+      <label>Mensaje
+        <textarea id="mensaje" placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+        <span class="error" id="err-mensaje"></span>
+      </label>
+
+      <button type="submit" class="btn-primary">Enviar mensaje</button>
+
+      <!-- Confirmación: aparece tras envío exitoso -->
+      <div id="confirmacion" class="confirmacion hidden">
+        ✓ Tu mensaje fue enviado correctamente. Te responderemos pronto.
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div><strong>Al Día</strong><p>Noticias claras, todos los días.</p></div>
+    <div>
+      <strong>Información de contacto</strong>
+      <p>correo: hola@aldia.app</p>
+      <p>tel: (601) 555 0192</p>
+      <p>horario: lun–vie, 8am–6pm</p>
+    </div>
+    <div><strong>Síguenos</strong><p>Instagram · X · YouTube</p></div>
+  </footer>
+  <div class="footer-copy">© 2026 Al Día. Todos los derechos reservados.</div>
+
+  <script src="js/contacto.js"></script>
+</body>
+</html>
