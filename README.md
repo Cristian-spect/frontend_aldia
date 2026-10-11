@@ -120,5 +120,5 @@ Verifica los datos de noticias, el servicio de favoritos (guardar, quitar, persi
 ## Historial del proyecto
 
 - **Entrega 1:** propuesta y mockups en Figma.
-- **Entrega 2:** prototipo funcional en HTML, CSS y JavaScript.
+- **Entrega 2:** prototipo funcional en HTML, CSS y JavaScript. Se conserva en la rama [entrega-2](https://github.com/Cristian-spect/frontend_aldia/tree/entrega-2) de este repositorio.
 - **Entrega 3:** migración a Angular, documentación y despliegue.
