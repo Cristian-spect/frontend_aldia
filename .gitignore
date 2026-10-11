@@ -1,5 +1,5 @@
-  node_modules/
-  dist/
-  .angular/
-  out-tsc/
-  .verification-*/
+node_modules/
+dist/
+.angular/
+out-tsc/
+.verification-*/
