@@ -1,0 +1,27 @@
+<section class="listado-header">
+  <h1>Todas las Noticias</h1>
+
+  <!-- Filtros por categoría: [class.activo] resalta el botón seleccionado; (click) cambia la categoría -->
+  <div class="filtros">
+    @for (cat of categorias; track cat.id) {
+      <button class="filtro" [class.activo]="categoria() === cat.id" [attr.aria-pressed]="categoria() === cat.id"
+              (click)="categoria.set(cat.id)">{{ cat.nombre }}</button>
+    }
+  </div>
+
+  <!-- Buscador en tiempo real: [value] muestra el estado y (input) lo actualiza (binding en dos sentidos) -->
+  <input type="search" id="buscador" aria-label="Buscar noticias" placeholder="Buscar noticias..."
+         [value]="busqueda()" (input)="busqueda.set($any($event.target).value)">
+</section>
+
+<section>
+  <div class="cards-grid">
+    @for (n of filtradas(); track n.id) {
+      <app-noticia-card [noticia]="n" />
+    }
+  </div>
+
+  @if (filtradas().length === 0) {
+    <p class="msg-vacio" role="status">No se encontraron noticias con ese criterio.</p>
+  }
+</section>

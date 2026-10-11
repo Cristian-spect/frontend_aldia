@@ -1,0 +1,40 @@
+<section class="hero">
+    <div class="hero-inner">
+      <h1>Lo que pasa, cuando pasa.</h1>
+      <p>Educación, tecnología, turismo y negocios en un solo lugar, contado de forma clara y sin relleno.</p>
+      <div class="hero-btns">
+        <a routerLink="/noticias" class="btn-primary">Explorar noticias</a>
+        <a routerLink="/" fragment="como-funciona" class="btn-secondary">Cómo funciona</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NOTICIAS DESTACADAS ── -->
+  <p class="section-label">DESTACADAS</p>
+  <section>
+    <div class="cards-grid">@for (noticia of destacadas; track noticia.id) { <app-noticia-card [noticia]="noticia" /> }</div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <section class="stats" id="como-funciona">
+    <div class="stat">
+      <span class="num">4</span>
+      <span>categorías</span>
+    </div>
+    <div class="stat">
+      <span class="num">120+</span>
+      <span>noticias publicadas</span>
+    </div>
+    <div class="stat">
+      <span class="num">3.4k</span>
+      <span>lectores activos</span>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta">
+    <h2>¿Tienes algo que contar?</h2>
+    <a routerLink="/contacto" class="btn-primary">Contáctanos</a>
+  </section>
+
+  

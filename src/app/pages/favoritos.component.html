@@ -1,0 +1,21 @@
+<section class="favoritos">
+  <h1>Tus noticias guardadas</h1>
+
+  @for (n of favoritos.favoritos(); track n.id) {
+    <div class="fav-item">
+      <img class="fav-thumb" [src]="n.imagen" [alt]="n.titulo" loading="lazy">
+      <div class="fav-info">
+        <h3><a [routerLink]="['/detalle', n.id]">{{ n.titulo }}</a></h3>
+        <small>{{ n.categoria }} · publicado el {{ n.fecha }}</small>
+      </div>
+      <button class="btn-quitar" [attr.aria-label]="'Quitar de favoritos: ' + n.titulo" (click)="favoritos.quitar(n.id)">Quitar</button>
+    </div>
+  } @empty {
+    <!-- Estado vacío -->
+    <p class="msg-vacio">Aún no tienes noticias guardadas. <a routerLink="/noticias">Explorar noticias →</a></p>
+  }
+
+  @if (favoritos.error()) {
+    <p role="alert" class="error">{{ favoritos.error() }}</p>
+  }
+</section>

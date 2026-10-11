@@ -1,0 +1,33 @@
+<section class="detalle">
+  @if (noticia(); as n) {
+    <a routerLink="/noticias" class="volver">← Volver al listado</a><br>
+
+    <span [class]="'card-cat cat-' + n.categoria">{{ n.categoria }}</span>
+    <h1>{{ n.titulo }}</h1>
+    <p class="meta">Publicado el {{ n.fecha }} · Por Redacción Al Día</p>
+    <img [src]="n.imagen" [alt]="n.titulo">
+    <p class="cuerpo">{{ n.cuerpo }}</p>
+
+    <div class="acciones">
+      <!-- Event binding (click) y texto que cambia según el estado del favorito -->
+      <button class="btn-primary" [attr.aria-pressed]="favoritos.contiene(n.id)" (click)="favoritos.toggle(n)">{{ favoritos.contiene(n.id) ? '✓ En favoritos' : '♥ Agregar a favoritos' }}</button>
+      <a routerLink="/contacto" class="btn-secondary">Ir a contacto</a>
+    </div>
+
+    @if (favoritos.error()) {
+      <p role="alert" class="error">{{ favoritos.error() }}</p>
+    }
+
+    <!-- Noticias relacionadas de la misma categoría -->
+    @if (relacionadas().length) {
+      <p class="relacionadas-titulo">RELACIONADAS</p>
+      @for (r of relacionadas(); track r.id) {
+        <p><a [routerLink]="['/detalle', r.id]" class="card-link">{{ r.titulo }}</a></p>
+      }
+    }
+  } @else {
+    <!-- Id inexistente o ausente -->
+    <p>Noticia no encontrada.</p>
+    <a routerLink="/noticias" class="btn-primary">Volver al listado</a>
+  }
+</section>

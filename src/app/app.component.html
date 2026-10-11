@@ -1,0 +1,38 @@
+<!-- ── NAVBAR (común a todas las páginas) ── -->
+<!-- routerLinkActive agrega la clase "activo" al enlace de la página actual -->
+<header class="navbar">
+  <div class="nav-brand">Al Día</div>
+  <nav>
+    <a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">Inicio</a>
+    <a routerLink="/noticias" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">Noticias</a>
+    <a routerLink="/favoritos" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">Favoritos</a>
+    <a routerLink="/contacto" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">Contacto</a>
+    <a routerLink="/nosotros" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">Nosotros</a>
+  </nav>
+</header>
+
+<!-- ── CONTENIDO: aquí el Router inserta la página activa ── -->
+<main>
+  <router-outlet />
+</main>
+
+<!-- ── FOOTER (común a todas las páginas) ── -->
+<footer class="footer">
+  <div>
+    <strong>Al Día</strong>
+    <p>Noticias claras, todos los días.</p>
+  </div>
+  <div>
+    <strong>Enlaces</strong>
+    <a routerLink="/">Inicio</a>
+    <a routerLink="/noticias">Noticias</a>
+    <a routerLink="/favoritos">Favoritos</a>
+    <a routerLink="/contacto">Contacto</a>
+    <a routerLink="/nosotros">Nosotros</a>
+  </div>
+  <div>
+    <strong>Síguenos</strong>
+    <p>Instagram · X · YouTube</p>
+  </div>
+</footer>
+<div class="footer-copy">© 2026 Al Día. Todos los derechos reservados.</div>

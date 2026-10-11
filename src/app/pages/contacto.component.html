@@ -1,0 +1,35 @@
+<section class="contacto">
+  <h1>Escríbenos</h1>
+
+  <!-- [formGroup] enlaza el formulario con el FormGroup del componente; (ngSubmit) llama a enviar() -->
+  <form [formGroup]="form" (ngSubmit)="enviar()" novalidate>
+
+    <label for="nombre">Nombre completo<input
+        type="text" id="nombre" formControlName="nombre" placeholder="Ej. Laura Gómez"
+        [class.error-field]="error('nombre')" [attr.aria-invalid]="error('nombre')"
+        aria-describedby="err-nombre" autocomplete="name">
+      <span class="error" id="err-nombre">{{ error('nombre') ? 'El nombre es obligatorio.' : '' }}</span>
+    </label>
+
+    <label for="correo">Correo electrónico<input
+        type="email" id="correo" formControlName="correo" placeholder="tu@correo.com"
+        [class.error-field]="error('correo')" [attr.aria-invalid]="error('correo')"
+        aria-describedby="err-correo" autocomplete="email">
+      <span class="error" id="err-correo">{{ error('correo') ? 'Ingresa un correo electrónico válido.' : '' }}</span>
+    </label>
+
+    <label for="mensaje">Mensaje<textarea
+        id="mensaje" formControlName="mensaje" placeholder="Cuéntanos en qué podemos ayudarte"
+        [class.error-field]="error('mensaje')" [attr.aria-invalid]="error('mensaje')"
+        aria-describedby="err-mensaje"></textarea>
+      <span class="error" id="err-mensaje">{{ error('mensaje') ? 'El mensaje no puede estar vacío.' : '' }}</span>
+    </label>
+
+    <button type="submit" class="btn-primary">Enviar mensaje</button>
+
+    <!-- Confirmación: aparece solo tras un envío válido -->
+    @if (confirmacion()) {
+      <div class="confirmacion" role="status">✓ Formulario validado correctamente. Este envío es una demostración local.</div>
+    }
+  </form>
+</section>
